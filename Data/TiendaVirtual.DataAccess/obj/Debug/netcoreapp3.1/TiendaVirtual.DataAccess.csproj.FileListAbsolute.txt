@@ -1,0 +1,8 @@
+C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.DataAccess\bin\Debug\netcoreapp3.1\TiendaVirtual.DataAccess.deps.json
+C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.DataAccess\bin\Debug\netcoreapp3.1\TiendaVirtual.DataAccess.dll
+C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.DataAccess\obj\Debug\netcoreapp3.1\TiendaVirtual.DataAccess.csprojAssemblyReference.cache
+C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.DataAccess\obj\Debug\netcoreapp3.1\TiendaVirtual.DataAccess.AssemblyInfoInputs.cache
+C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.DataAccess\obj\Debug\netcoreapp3.1\TiendaVirtual.DataAccess.AssemblyInfo.cs
+C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.DataAccess\bin\Debug\netcoreapp3.1\TiendaVirtual.Models.dll
+C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.DataAccess\bin\Debug\netcoreapp3.1\TiendaVirtual.Repository.dll
+C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.DataAccess\bin\Debug\netcoreapp3.1\TiendaVirtual.UnitOfWork.dll

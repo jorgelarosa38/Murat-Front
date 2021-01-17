@@ -1,0 +1,182 @@
+﻿using System;
+using System.IO;
+using System.Reflection;
+using System.Drawing;
+using TiendaVirtual.Models;
+using System.Xml;
+using System.Xml.Serialization;
+using System.Collections.Generic;
+
+namespace TiendaVirtual.BusinessLogic.Utilities
+{
+    public class AuxiliarMethods
+    {
+        public static string ImageToBase64(string ImagenPath)
+        {
+            string path = "../Imagenes/Slider/Producto/" + ImagenPath;
+            byte[] imageArray = System.IO.File.ReadAllBytes(path);
+            return Convert.ToBase64String(imageArray);
+        }
+
+        public static void Base64ToImage(string binary, string ImagePath, string Category)
+        {
+            var img = Image.FromStream(new MemoryStream(Convert.FromBase64String(binary)));
+            var path = Path.Combine("../Imagenes/Slider/", Category, ImagePath);
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+            img.Save(path);
+        }
+
+        public static string GenerarURL(string categoria, string ImageName)
+        {
+            string url = Path.Combine(Constant.url_imagenes, categoria, ImageName);
+            return url;
+        }
+
+        public static object CreateHome()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static FiltroProducto ValidarFiltros(FiltroProducto filtroProducto)
+        {
+            filtroProducto.STag = filtroProducto.STag.Trim().ToUpper();
+            if (!((filtroProducto.IdCategoria.Trim()).Length > 0))
+                filtroProducto.IdCategoria = "000";
+
+            if (!((filtroProducto.IdMarca.Trim()).Length > 0))
+                filtroProducto.IdMarca = "000";
+
+            if (filtroProducto.Precio_Fin == 0)
+                filtroProducto.Precio_Fin = 9999;
+
+            return filtroProducto;
+        }
+
+        public static object ValidateParameters(object obj, Type model)
+        {
+            PropertyInfo[] properties = (model).GetProperties();
+            foreach (PropertyInfo property in properties)
+            {
+                var Valor = property.GetValue(obj);
+                if (Valor == null)
+                {
+
+                    var type = (property.Name).GetType().ToString();
+                    switch (type)
+                    {
+                        case "System.int":
+
+                            property.SetValue(obj, 0);
+                            break;
+                        case "System.String":
+                            property.SetValue(obj, "");
+                            break;
+                    }
+                }
+            }
+            return obj;
+        }
+
+        public static string ObjectToXML(MuratPedidos obj)
+        {
+            string cabecera1 = "<PAXLST_Message ><Cabecera><IDCLIENTE>" + obj.IdCliente + "</IDCLIENTE><SCORREO>" + obj.SCorreo + "</SCORREO><SNRO_CELULAR>" + obj.SNro_Celular + "</SNRO_CELULAR><SNOMBRE>" + obj.SNro_Celular + "</SNOMBRE>";
+            string cabecera2 = "<SAPELLIDO>" + obj.SApellido + "</SAPELLIDO><IDPAIS>" + obj.IdPais + "</IDPAIS><UBIGEO>" + obj.Ubigeo + "</UBIGEO><SDIRECCION>" + obj.SDireccion + "</SDIRECCION><SREFERENCIA>" + obj.SReferencia + "</SREFERENCIA>";
+            string cabecera3 = "<COD_DOCTO_VENTA>" + obj.Cod_Docto_Venta + "</COD_DOCTO_VENTA><COD_DOCTO_IDENTIDAD>" + obj.Cod_Docto_Identidad + "</COD_DOCTO_IDENTIDAD><SNRO_DOCTO>" + obj.SNro_Docto + "</SNRO_DOCTO>";
+            string cabecera4 = "<NMAYOR_EDAD>" + obj.NMayor_Edad + "</NMAYOR_EDAD><DFECHA>" + obj.DFecha + "</DFECHA><COD_MONEDA>" + obj.Cod_Moneda + "</COD_MONEDA><NIMPORTE>" + obj.NImporte + "</NIMPORTE>";
+            string cabecera5 = "<NIMPORTE_ENVIO>" + obj.NImporte_Envio + "</NIMPORTE_ENVIO><NTOTAL>" + obj.NTotal + "</NTOTAL><NRO_OPERACION>" + obj.Nro_Operacion + "</NRO_OPERACION></Cabecera>";
+
+            string xml = String.Concat(cabecera1, cabecera2, cabecera3, cabecera4, cabecera5);
+
+            foreach (var pedido in obj.Detalle)
+            {
+                string detalle = "<Detalle><IDPRODUCTO>" + pedido.IdProducto + "</IDPRODUCTO><COD_COLOR>" + pedido.Cod_Color + "</COD_COLOR><COD_TALLA>" + pedido.Cod_Talla + "</COD_TALLA><NCANTIDAD>" +
+                    pedido.NCantidad + "</NCANTIDAD><NPRECIO>" + pedido.NPrecio + "</NPRECIO><IDPPUBLIC_PRODUCTO>" + pedido.IdPPublic_Producto + "</IDPPUBLIC_PRODUCTO></Detalle>";
+
+                xml = String.Concat(xml, detalle);
+            }
+            string cierre_xml = "</PAXLST_Message >";
+            xml = String.Concat(xml, cierre_xml);
+
+            return xml;
+        }
+
+        public static string ArmadoXML(object obj, Type model, string tipo)
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            XmlSerializer xmlSerializer = new XmlSerializer(model);
+            try
+            {
+                using (MemoryStream xmlStream = new MemoryStream())
+                {
+                    xmlSerializer.Serialize(xmlStream, obj);
+                    xmlStream.Position = 0;
+                    xmlDoc.Load(xmlStream);
+                    string xml = CierreXML(xmlDoc.InnerXml, tipo);
+                    return xml;
+                }
+            }
+            catch (Exception) { }
+
+            return "";
+        }
+
+        public static string CierreXML(string obj, string tipo)
+        {
+            string xml = "";
+            string xlm_entrada = "<PAXLST_Message >";
+            string xml_cierre = "</PAXLST_Message >";
+            try
+            {
+                if (tipo == "Cliente")
+                {
+                    int tamaño = obj.Length - 136;
+                    obj = obj.Substring(136, tamaño);
+                    obj = obj.Replace("</ArrayOfCliente>", "");
+
+                    xml = string.Concat(xlm_entrada, obj, xml_cierre);
+                }
+                if (tipo == "Pedido")
+                {
+                    int tamaño = obj.Length - 135;
+                    obj = obj.Substring(136, tamaño);
+                    obj = obj.Replace("</ArrayOfPedido>", "");
+
+                    xml = string.Concat(xlm_entrada, obj, xml_cierre);
+                }
+            }
+            catch (Exception) { }
+
+            return xml;
+        }
+        public static string StandardXML(List<XMLStructure> lstXML)
+        {
+            string xml = "";
+            string nodo = "";
+
+            foreach (var item in lstXML)
+            {
+                string tablas = "";
+                string datos = "";
+
+                if (nodo != item.Entidad)
+                {
+                    tablas = "</" + nodo + "><" + item.Entidad + ">";
+                }
+                datos = "<" + item.Etiqueta + ">" + item.Valor + "</" + item.Etiqueta + ">";
+
+                nodo = item.Entidad;
+
+                xml += tablas + datos;
+            }
+            xml = xml[3..^0];
+            //string version = @"<? xml version = ""2.0"" encoding = ""UTF-8"" ?>";
+            // "" + version + 
+            xml = "<PAXLST_Message >" + xml + "</" + nodo + "></PAXLST_Message >";
+
+            return xml;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>TiendaVirtual.WebApi</AssemblyName>
+    <RootNamespace>TiendaVirtual.WebApi</RootNamespace>
+    <UserSecretsId>925a1b8d-ace4-4e2b-97db-ec34129ae3f7</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\TiendaVirtual.BusinessLogic\TiendaVirtual.BusinessLogic.csproj" />
+    <ProjectReference Include="..\..\Data\TiendaVirtual.DataAccess\TiendaVirtual.DataAccess.csproj" />
+    <ProjectReference Include="..\..\Data\TiendaVirtual.UnitOfWork\TiendaVirtual.UnitOfWork.csproj" />
+  </ItemGroup>
+
+</Project>
