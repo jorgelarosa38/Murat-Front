@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj": {}
+    "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\TiendaVirtual.Models.csproj": {
+    "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\TiendaVirtual.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\TiendaVirtual.Models.csproj",
+        "projectUniqueName": "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\TiendaVirtual.Models.csproj",
         "projectName": "TiendaVirtual.Models",
-        "projectPath": "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\TiendaVirtual.Models.csproj",
+        "projectPath": "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\TiendaVirtual.Models.csproj",
         "packagesPath": "C:\\Users\\jorAN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\obj\\",
+        "outputPath": "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jorAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,18 +54,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj": {
+    "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj",
         "projectName": "TiendaVirtual.Repository",
-        "projectPath": "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj",
+        "projectPath": "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj",
         "packagesPath": "C:\\Users\\jorAN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\obj\\",
+        "outputPath": "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jorAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
           "netcoreapp3.0": {
             "targetAlias": "netcoreapp3.0",
             "projectReferences": {
-              "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\TiendaVirtual.Models.csproj": {
-                "projectPath": "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\TiendaVirtual.Models.csproj"
+              "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\TiendaVirtual.Models.csproj": {
+                "projectPath": "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Models\\TiendaVirtual.Models.csproj"
               }
             }
           }
@@ -112,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

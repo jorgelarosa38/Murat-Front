@@ -7,3 +7,12 @@ C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.Models\
 C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.Models\obj\Debug\netcoreapp3.0\TiendaVirtual.Models.csproj.CoreCompileInputs.cache
 C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.Models\obj\Debug\netcoreapp3.0\TiendaVirtual.Models.dll
 C:\Users\jorAN\Documents\Murat_Projects\TiendaVirtual\Data\TiendaVirtual.Models\obj\Debug\netcoreapp3.0\TiendaVirtual.Models.pdb
+C:\Users\jorAN\Documents\Murat_Projects\Projectos\Front\Murat-Front\Data\TiendaVirtual.Models\bin\Debug\netcoreapp3.0\TiendaVirtual.Models.deps.json
+C:\Users\jorAN\Documents\Murat_Projects\Projectos\Front\Murat-Front\Data\TiendaVirtual.Models\bin\Debug\netcoreapp3.0\TiendaVirtual.Models.dll
+C:\Users\jorAN\Documents\Murat_Projects\Projectos\Front\Murat-Front\Data\TiendaVirtual.Models\bin\Debug\netcoreapp3.0\TiendaVirtual.Models.pdb
+C:\Users\jorAN\Documents\Murat_Projects\Projectos\Front\Murat-Front\Data\TiendaVirtual.Models\obj\Debug\netcoreapp3.0\TiendaVirtual.Models.csprojAssemblyReference.cache
+C:\Users\jorAN\Documents\Murat_Projects\Projectos\Front\Murat-Front\Data\TiendaVirtual.Models\obj\Debug\netcoreapp3.0\TiendaVirtual.Models.AssemblyInfoInputs.cache
+C:\Users\jorAN\Documents\Murat_Projects\Projectos\Front\Murat-Front\Data\TiendaVirtual.Models\obj\Debug\netcoreapp3.0\TiendaVirtual.Models.AssemblyInfo.cs
+C:\Users\jorAN\Documents\Murat_Projects\Projectos\Front\Murat-Front\Data\TiendaVirtual.Models\obj\Debug\netcoreapp3.0\TiendaVirtual.Models.csproj.CoreCompileInputs.cache
+C:\Users\jorAN\Documents\Murat_Projects\Projectos\Front\Murat-Front\Data\TiendaVirtual.Models\obj\Debug\netcoreapp3.0\TiendaVirtual.Models.dll
+C:\Users\jorAN\Documents\Murat_Projects\Projectos\Front\Murat-Front\Data\TiendaVirtual.Models\obj\Debug\netcoreapp3.0\TiendaVirtual.Models.pdb

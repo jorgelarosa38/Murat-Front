@@ -50,11 +50,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.UnitOfWork\\TiendaVirtual.UnitOfWork.csproj",
+      "projectUniqueName": "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.UnitOfWork\\TiendaVirtual.UnitOfWork.csproj",
       "projectName": "TiendaVirtual.UnitOfWork",
-      "projectPath": "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.UnitOfWork\\TiendaVirtual.UnitOfWork.csproj",
+      "projectPath": "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.UnitOfWork\\TiendaVirtual.UnitOfWork.csproj",
       "packagesPath": "C:\\Users\\jorAN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.UnitOfWork\\obj\\",
+      "outputPath": "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.UnitOfWork\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jorAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -71,8 +71,8 @@
         "netcoreapp3.0": {
           "targetAlias": "netcoreapp3.0",
           "projectReferences": {
-            "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj": {
-              "projectPath": "C:\\Users\\jorAN\\Documents\\Docs\\MURAT\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj"
+            "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj": {
+              "projectPath": "C:\\Users\\jorAN\\Documents\\Murat_Projects\\Projectos\\Front\\Murat-Front\\Data\\TiendaVirtual.Repository\\TiendaVirtual.Repository.csproj"
             }
           }
         }
@@ -101,7 +101,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
