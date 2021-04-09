@@ -1,10 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>TiendaVirtual.WebApi</AssemblyName>
     <RootNamespace>TiendaVirtual.WebApi</RootNamespace>
     <UserSecretsId>925a1b8d-ace4-4e2b-97db-ec34129ae3f7</UserSecretsId>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
