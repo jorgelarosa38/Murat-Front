@@ -2,10 +2,10 @@
 using TiendaVirtual.Models;
 using TiendaVirtual.Repository;
 using System.Collections.Generic;
-using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+using System.Data;
 
 namespace TiendaVirtual.DataAccess
 {
@@ -26,7 +26,7 @@ namespace TiendaVirtual.DataAccess
 
             using (var connection = new SqlConnection(_connectionString))
             {
-                return (await connection.QueryAsync<MenuBar>("[dbo].[SPE_LIST_MENU]", parameters, commandType: System.Data.CommandType.StoredProcedure)).ToList();
+                return (await connection.QueryAsync<MenuBar>("[dbo].[SPE_LIST_MENU]", parameters, commandType: CommandType.StoredProcedure)).ToList();
             }
         }
 
@@ -39,15 +39,15 @@ namespace TiendaVirtual.DataAccess
             {
                 if (Tipo == 1)
                 {
-                    return (await connection.QueryAsync<ListMarcas>("[dbo].[SPE_LIST_FILTRO]", parameters, commandType: System.Data.CommandType.StoredProcedure)).ToList();
+                    return (await connection.QueryAsync<ListMarcas>("[dbo].[SPE_LIST_FILTRO]", parameters, commandType: CommandType.StoredProcedure)).ToList();
                 }
                 if (Tipo == 2)
                 {
-                    return (await connection.QueryAsync<ListCategorias>("[dbo].[SPE_LIST_FILTRO]", parameters, commandType: System.Data.CommandType.StoredProcedure)).ToList();
+                    return (await connection.QueryAsync<ListCategorias>("[dbo].[SPE_LIST_FILTRO]", parameters, commandType: CommandType.StoredProcedure)).ToList();
                 }
                 if (Tipo == 3)
                 {
-                    return (await connection.QueryAsync<ListArrPrecios>("[dbo].[SPE_LIST_FILTRO]", parameters, commandType: System.Data.CommandType.StoredProcedure)).ToList();
+                    return (await connection.QueryAsync<ListArrPrecios>("[dbo].[SPE_LIST_FILTRO]", parameters, commandType: CommandType.StoredProcedure)).ToList();
                 }
                 return null;
             }
@@ -65,7 +65,7 @@ namespace TiendaVirtual.DataAccess
 
             using (var connection = new SqlConnection(_connectionString))
             {
-                return (await connection.QueryAsync<PublicadoProductoServ>("[dbo].[SPE_LIST_PUB_PRODUCTO]", parameters, commandType: System.Data.CommandType.StoredProcedure)).ToList();
+                return (await connection.QueryAsync<PublicadoProductoServ>("[dbo].[SPE_LIST_PUB_PRODUCTO]", parameters, commandType: CommandType.StoredProcedure)).ToList();
             }
         }
 
@@ -105,7 +105,7 @@ namespace TiendaVirtual.DataAccess
             {
                 List<Main> LstMain = new List<Main>();
                 Main main = new Main();
-                SqlMapper.GridReader reader = await connection.QueryMultipleAsync("[dbo].[SPE_LIST_SLIDER]", parameters, commandType: System.Data.CommandType.StoredProcedure);
+                SqlMapper.GridReader reader = await connection.QueryMultipleAsync("[dbo].[SPE_LIST_SLIDER]", parameters, commandType: CommandType.StoredProcedure);
                 List<Slider> ListSlider = reader.Read<Slider>().ToList();
                 List<Etiqueta> ListEtiqueta = reader.Read<Etiqueta>().ToList();
                 List<Configuracion> ListConfig = reader.Read<Configuracion>().ToList();
@@ -138,7 +138,7 @@ namespace TiendaVirtual.DataAccess
 
             using (var connection = new SqlConnection(_connectionString))
             {
-                return await connection.QueryFirstAsync<ResponseSql>("[dbo].[SPE_UDP_EXT_CLIENTE]", parameters, commandType: System.Data.CommandType.StoredProcedure);
+                return await connection.QueryFirstAsync<ResponseSql>("[dbo].[SPE_UDP_EXT_CLIENTE]", parameters, commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -149,7 +149,7 @@ namespace TiendaVirtual.DataAccess
 
             using (var connection = new SqlConnection(_connectionString))
             {
-                return await connection.QueryFirstAsync<ResponseSql>("[dbo].[SPE_UDP_EXT_PEDIDO]", parameters, commandType: System.Data.CommandType.StoredProcedure);
+                return await connection.QueryFirstAsync<ResponseSql>("[dbo].[SPE_UDP_EXT_PEDIDO]", parameters, commandType: CommandType.StoredProcedure);
             }
         }
 

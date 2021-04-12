@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Cors;
 
 namespace TiendaVirtual.WebApi.Controllers
 {
-    [EnableCors]
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]

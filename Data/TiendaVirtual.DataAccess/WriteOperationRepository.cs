@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace TiendaVirtual.DataAccess
 {
@@ -23,7 +24,7 @@ namespace TiendaVirtual.DataAccess
 
             using (var connection = new SqlConnection(_connectionString))
             {
-                var response = (await connection.QuerySingleOrDefaultAsync<string>("[dbo].[Get_MuratOperacion]", parameters, commandType: System.Data.CommandType.StoredProcedure));
+                var response = (await connection.QuerySingleOrDefaultAsync<string>("[dbo].[Get_MuratOperacion]", parameters, commandType: CommandType.StoredProcedure));
                 return response;
             }
         }
@@ -40,11 +41,11 @@ namespace TiendaVirtual.DataAccess
             using (var connection = new SqlConnection(_connectionString))
             {
                 if ((writeOperation.IdOperacion).Equals(1)) {
-                    return (await connection.QueryAsync<WriteOutput>("[dbo].[SP_UDP_CLIENTE]", parameters, commandType: System.Data.CommandType.StoredProcedure)).ToList();
+                    return (await connection.QueryAsync<WriteOutput>("[dbo].[SP_UDP_CLIENTE]", parameters, commandType: CommandType.StoredProcedure)).ToList();
                 }
                 else if ((writeOperation.IdOperacion).Equals(2))
                 {
-                    return (await connection.QueryAsync<WriteOutput>("[dbo].[SP_UDP_OPERACION]", parameters, commandType: System.Data.CommandType.StoredProcedure)).ToList();
+                    return (await connection.QueryAsync<WriteOutput>("[dbo].[SP_UDP_OPERACION]", parameters, commandType: CommandType.StoredProcedure)).ToList();
                 }
                 return obj;
             }

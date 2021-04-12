@@ -9,7 +9,6 @@ using TiendaVirtual.Utilities;
 
 namespace TiendaVirtual.Controllers
 {
-    [EnableCors]
     [Produces("application/json")]
     [Route("api/[controller]/Services")]
     [AllowAnonymous]
