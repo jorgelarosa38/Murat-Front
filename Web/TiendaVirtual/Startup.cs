@@ -13,6 +13,7 @@ using TiendaVirtual.UnitOfWork;
 using TiendaVirtual.BusinessLogic.Helpers;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using static TiendaVirtual.Utilities.AESstring;
 
 namespace TiendaVirtual
 {
@@ -33,7 +34,7 @@ namespace TiendaVirtual
                 options.AddPolicy(MyAllowedOrigin,
                     builder =>
                     {
-                        builder.WithOrigins(Configuration["AppSettings:AllowedOrigins"].Split(";")).AllowCredentials().AllowAnyMethod().AllowAnyHeader();
+                        builder.WithOrigins(Configuration["AppSettings:Origins"].Split(";")).AllowCredentials().AllowAnyMethod().AllowAnyHeader();
                     });
             });
             #endregion
@@ -49,7 +50,7 @@ namespace TiendaVirtual
 
             #region SQL CONNECTION
             services.AddSingleton<IUnitOfWork>(option => new ProjectUnitOfWork(
-            Configuration.GetConnectionString("Project"), Configuration
+            DecryptAES(Configuration.GetConnectionString("Project")), Configuration
             ));
             #endregion
 

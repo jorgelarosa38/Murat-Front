@@ -5,7 +5,7 @@ using TiendaVirtual.Utilities;
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
+using static TiendaVirtual.Utilities.AESstring;
 
 namespace TiendaVirtual.WebApi.Controllers
 {
@@ -45,6 +45,26 @@ namespace TiendaVirtual.WebApi.Controllers
                 return Ok(response);
             }
             return Ok(rpta);
+        }
+
+        [HttpPost]
+        [Route("encryptDecrypt")]
+        public ActionResult<object> encryptDecrypt(Credenciales credenciales)
+        {
+            var cadena = new object();
+
+            //usuario : cadena de conexion
+            //contraseña: opcion
+            if (credenciales.contraseña == "1")
+            {
+                cadena = EncryptAES(credenciales.usuario);
+            }
+            else {
+
+                cadena = DecryptAES(credenciales.usuario);
+            }
+
+            return Ok(cadena);
         }
     }
 }
