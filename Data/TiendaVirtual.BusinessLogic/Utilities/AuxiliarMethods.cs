@@ -10,9 +10,10 @@ namespace TiendaVirtual.BusinessLogic.Utilities
 {
     public class AuxiliarMethods
     {
-        public static string GenerarURL(string categoria, string ImageName)
+
+        public static string GenerarURL(string directory, string categoria, string ImageName)
         {
-            string url = Path.Combine(Constant.url_imagenes, categoria, ImageName);
+            string url = Path.Combine(directory, categoria, ImageName);
             return url;
         }
 

@@ -19,7 +19,10 @@ namespace TiendaVirtual
 {
     public class Startup
     {
-        private readonly string MyAllowedOrigin = "_MyOriginPolicy";
+        private readonly string OriginList = "http://localhost:4200;https://antaminka.com;https://antaminka.pe;http://antaminka.com;" +
+            "http://antaminka.pe;http://antaminka.murat.pe;http://admin.antaminka.pe;https://www.antaminka.com;https://www.antaminka.pe;http://www.antaminka.com;" +
+            "http://www.antaminka.pe;http://www.antaminka.murat.pe;http://www.admin.antaminka.pe";
+        private readonly string MuratOrigin = "_MyOriginPolicy";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,10 +34,13 @@ namespace TiendaVirtual
             #region ENABLE CORS
             services.AddCors(options =>
             {
-                options.AddPolicy(MyAllowedOrigin,
+                options.AddPolicy(MuratOrigin,
                     builder =>
                     {
-                        builder.WithOrigins(Configuration["AppSettings:Origins"].Split(";")).AllowCredentials().AllowAnyMethod().AllowAnyHeader();
+                        builder.WithOrigins(OriginList.Split(";"))
+                        .AllowCredentials()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
                     });
             });
             #endregion
@@ -96,7 +102,7 @@ namespace TiendaVirtual
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors(MyAllowedOrigin);
+            app.UseCors(MuratOrigin);
             app.UseHttpsRedirection();
             if (env.IsDevelopment())
             {
